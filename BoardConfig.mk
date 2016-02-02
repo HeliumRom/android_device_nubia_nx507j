@@ -212,7 +212,8 @@ SKIP_BOOT_JARS_CHECK := true
 include device/qcom/sepolicy/sepolicy.mk
 BOARD_SEPOLICY_DIRS += device/nubia/nx507j/sepolicy
 
-
+# HeliumRom
 TARGET_NDK_VERSION := 4.9
 TARGET_SM_AND := 4.9
 TARGET_SM_KERNEL := 4.9
+GCC_O3 := true
