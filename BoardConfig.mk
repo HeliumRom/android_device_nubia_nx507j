@@ -208,7 +208,7 @@ BOARD_SEPOLICY_DIRS += device/nubia/nx507j/sepolicy
 # Recovery
 #RECOVERY_VARIANT := twrp
 #ifneq ($(RECOVERY_VARIANT),twrp)
-#TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/recovery/recovery.fstab
+TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/recovery/recovery.fstab
 #else
 #TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/recovery/twrp.fstab
 #endif
