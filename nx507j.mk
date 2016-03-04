@@ -105,7 +105,12 @@ PRODUCT_PACKAGES += \
 
 # Charger
 PRODUCT_PACKAGES += \
+    charger \
     charger_res_images
+
+# Allows healthd to boot directly from charger mode rather than initiating a reboot.
+#PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+#    ro.enable_boot_charger_mode=1
 
 # Display
 PRODUCT_PACKAGES += \
@@ -132,9 +137,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     FMRadio \
     libfmjni
-
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.fm.transmitter=false
 
 # LOWI
 PRODUCT_COPY_FILES += \
@@ -256,10 +258,6 @@ PRODUCT_PACKAGES += \
     wpa_supplicant_overlay.conf \
     p2p_supplicant_overlay.conf 
 
-# Keyhandler
-PRODUCT_PACKAGES += \
-    com.cyanogenmod.keyhandler
-
 # ANT+
 PRODUCT_PACKAGES += \
     libantradio \
@@ -302,7 +300,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.radio.mode_pref_nv10=1 \
     ro.telephony.get_imsi_from_sim=true
 
-PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.radio.apm_sim_not_pwdn=1
 
@@ -364,6 +361,10 @@ PRODUCT_COPY_FILES += \
 # IO Scheduler
 PRODUCT_PROPERTY_OVERRIDES += \
     sys.io.scheduler=bfq
+
+# Keyhandler
+PRODUCT_PACKAGES += \
+    com.cyanogenmod.keyhandler
 
 PRODUCT_SYSTEM_SERVER_JARS += com.cyanogenmod.keyhandler
 # never dexopt the keyhandler
