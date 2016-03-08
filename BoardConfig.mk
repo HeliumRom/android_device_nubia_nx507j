@@ -203,11 +203,11 @@ include device/qcom/sepolicy/sepolicy.mk
 BOARD_SEPOLICY_DIRS += device/nubia/nx507j/sepolicy
 
 # Recovery
-ifeq ($(BUILD_TWRP),true)
+#ifeq ($(BUILD_TWRP),true)
 TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/recovery/twrp.fstab
-else
-TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/recovery/recovery.fstab
-endif
+#else
+#TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/recovery/recovery.fstab
+#endif
 BOARD_VENDOR := zte-qcom
 BOARD_HAS_NO_SELECT_BUTTON := true
 BOARD_SUPPRESS_EMMC_WIPE := true
@@ -252,4 +252,4 @@ STRICT_ALIASING := false
 KRAIT_TUNINGS := true
 FLOOP_NEST_OPTIMIZE := true
 GCC_OPTIMIZATIONS := true
-BUILD_TWRP := true
+#BUILD_TWRP := true
