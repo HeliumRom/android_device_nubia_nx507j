@@ -22,7 +22,6 @@ PRODUCT_COPY_FILES := $(filter-out frameworks/base/data/keyboards/AVRCP.kl:syste
 	frameworks/base/data/keyboards/Generic.kl:system/usr/keylayout/Generic.kl \
 	frameworks/base/data/keyboards/Generic.kcm:system/usr/keychars/Generic.kcm, $(PRODUCT_COPY_FILES))
 
-
 # QCRIL
 TARGET_RIL_VARIANT := caf
 SIM_COUNT := 2
@@ -190,7 +189,6 @@ TARGET_PROVIDES_WCNSS_QMI := true
 
 # dex-preoptimization to speed up first boot sequence
 WITH_DEXPREOPT := false
-
 SKIP_BOOT_JARS_CHECK := true
 
 # SELinux
@@ -198,11 +196,11 @@ include device/qcom/sepolicy/sepolicy.mk
 BOARD_SEPOLICY_DIRS += device/nubia/nx507j/sepolicy
 
 # Recovery
-#ifeq ($(BUILD_TWRP),true)
+ifeq (1,$(words $(filter recovery,$(LOCAL_MODULE))))
 TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/recovery/twrp.fstab
-#else
-#TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/recovery/recovery.fstab
-#endif
+else
+TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/recovery/recovery.fstab
+endif
 BOARD_VENDOR := zte-qcom
 BOARD_HAS_NO_SELECT_BUTTON := true
 BOARD_SUPPRESS_EMMC_WIPE := true
@@ -247,4 +245,3 @@ STRICT_ALIASING := false
 KRAIT_TUNINGS := true
 FLOOP_NEST_OPTIMIZE := true
 GCC_OPTIMIZATIONS := true
-#BUILD_TWRP := true
