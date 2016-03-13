@@ -1,12 +1,8 @@
-/system 	ext4 	/dev/block/platform/msm_sdcc.1/by-name/system 	
-/system 	f2fs 	/dev/block/platform/msm_sdcc.1/by-name/system 		
-/data 		ext4 	/dev/block/platform/msm_sdcc.1/by-name/userdata 	length=-16384
-/data 		f2fs 	/dev/block/platform/msm_sdcc.1/by-name/userdata
-/cache 		ext4 	/dev/block/platform/msm_sdcc.1/by-name/cache		
-/cache 		f2fs 	/dev/block/platform/msm_sdcc.1/by-name/cache
+/system 	auto 	/dev/block/platform/msm_sdcc.1/by-name/system 		
+/data 		auto 	/dev/block/platform/msm_sdcc.1/by-name/userdata	
+/cache 		auto 	/dev/block/platform/msm_sdcc.1/by-name/cache
 /boot		emmc 	/dev/block/platform/msm_sdcc.1/by-name/boot		
 /recovery	emmc 	/dev/block/platform/msm_sdcc.1/by-name/recovery
-/external_sd	vfat	/dev/block/mmcblk1p1					flags=storage;wipeingui;removable
-/external_sd	f2fs	/dev/block/mmcblk1p1					flags=storage;wipeingui;removable
-/usbdisk	vfat	/dev/block/sda1						flags=storage;wipeingui;removable
+/external_sd	auto	/dev/block/mmcblk1p1					flags=storage;wipeingui;removable
+/usbdisk	auto	/dev/block/sda1						flags=storage;wipeingui;removable
 

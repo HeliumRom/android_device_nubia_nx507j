@@ -149,7 +149,7 @@ BOARD_HARDWARE_CLASS := \
     hardware/cyanogen/cmhw
 
 # Encryption
-TARGET_HW_DISK_ENCRYPTION := true
+TARGET_HW_DISK_ENCRYPTION := false
 
 # Lights
 TARGET_PROVIDES_LIBLIGHT := true
@@ -196,11 +196,11 @@ include device/qcom/sepolicy/sepolicy.mk
 BOARD_SEPOLICY_DIRS += device/nubia/nx507j/sepolicy
 
 # Recovery
-ifeq (1,$(words $(filter recovery,$(LOCAL_MODULE))))
-TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/recovery/twrp.fstab
-else
+#ifeq (1,$(words $(filter recovery,$(LOCAL_MODULE))))
+#TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/recovery/twrp.fstab
+#else
 TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/recovery/recovery.fstab
-endif
+#endif
 BOARD_VENDOR := zte-qcom
 BOARD_HAS_NO_SELECT_BUTTON := true
 BOARD_SUPPRESS_EMMC_WIPE := true

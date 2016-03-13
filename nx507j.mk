@@ -56,10 +56,6 @@ PRODUCT_COPY_FILES += \
 # Screen density
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
-
-#ADDITIONAL_DEFAULT_PROPERTIES += \
-#    ro.secure=0 \
-#    ro.adb.secure=0
     
 # Boot animation
 TARGET_SCREEN_HEIGHT := 1920
